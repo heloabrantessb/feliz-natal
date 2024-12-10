@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    height: 100vh;
+    display: flex;
+    background-color: rgb(19, 19, 48);
+}
+
+.circle{
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid;
+    border-radius: 50%;
+}
+
+/* cores */
+.red{
+    background-color: rgba(255, 0, 0, 0.845);
+    border-color: rgba(255, 0, 0, 0.845);
+}
+.yellow{
+    background-color: rgba(255, 255, 0, 0.879);
+    border-color: rgba(255, 255, 0, 0.879);
+}
+.blue{
+    background-color: rgba(0, 0, 255, 0.872);
+    border-color: rgba(0, 0, 255, 0.872);
+}
+.green{
+    background-color: rgba(0, 128, 0, 0.888);
+    border-color: rgba(0, 128, 0, 0.888);
+}
+.pink{
+    background-color: rgba(243, 36, 202, 0.909);
+    border-color: rgba(243, 36, 202, 0.909);
+}
