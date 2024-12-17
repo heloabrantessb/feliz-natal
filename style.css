@@ -11,7 +11,7 @@
 body {
   font-size: 1.6rem;
   height: 100vh;
-  background-color: rgb(19, 19, 48);
+  background-color: #131330;
   justify-items: center;
 }
 .lights {
@@ -30,28 +30,32 @@ body {
 /* cores */
 .red {
   background-color: #ff0000d7;
+  border-color: red;
+  animation: brilha-vermelho 1.2s infinite;
 }
-/* ARRUMAR A SOMBRA INSET DO AMARELO */
 .yellow {
   background-color: #fdfd0d;
-  box-shadow: inset 32px -12px 48px 56px #aeae35;
+  border-color: yellow;
+  animation: brilha-amarelo 1.4s infinite;
 }
 .blue {
   background-color: rgba(0, 0, 255, 0.872);
   border-color: rgba(0, 0, 255, 0.872);
+  animation: brilha-azul 1.6s infinite;
 }
 .green {
   background-color: rgba(0, 128, 0, 0.888);
   border-color: rgba(0, 128, 0, 0.888);
+  animation: brilha-verde 1.8s infinite;
 }
 .pink {
   background-color: rgba(243, 36, 202, 0.909);
   border-color: rgba(243, 36, 202, 0.909);
+  animation: brilha-rosa 2s infinite;
 }
 /*botão*/
 button {
-  color: white;
-  background-color: red;
+  background-color: green;
   width: 8rem;
   height: 2rem;
   border-radius: 0.8rem;
@@ -68,11 +72,45 @@ button:hover {
   border: 2px solid red;
 }
 
-.on {
-  box-shadow: 0px 0px 85px 54px red, inset 0px 0px 53px -3px darkred;
-  border: red;
+/* Animação */
+@keyframes brilha-vermelho{
+  from {
+    box-shadow: inset 18px 0px 29px 22px darkred;
+  } to{
+    box-shadow: 0px 0px 85px 20px red;
+  }
+}
+@keyframes brilha-amarelo{
+  from {
+    box-shadow: inset 18px 0px 29px 22px yellow;
+  } to{
+    box-shadow: 0px 0px 85px 20px #aeae35;
+  }
+}
+@keyframes brilha-azul{
+  from {
+    box-shadow: inset 18px 0px 29px 22px darkblue;
+  } to{
+    box-shadow: 0px 0px 85px 20px blue;
+  }
+}
+@keyframes brilha-verde{
+  from {
+    box-shadow: inset 18px 0px 29px 22px darkgreen;
+  } to{
+    box-shadow: 0px 0px 85px 20px green;
+  }
+}
+@keyframes brilha-rosa{
+  from {
+    box-shadow: inset 18px 0px 29px 22px rgba(243, 36, 202, 0.909);
+  } to{
+    box-shadow: 0px 0px 85px 20px rgba(243, 36, 202, 0.909);
+  }
 }
 
-.off {
-  box-shadow: inset 18px 0px 29px 22px darkred;
+@media (max-width: 375px) {
+    body{
+      background-color: yellow;
+    }
 }
