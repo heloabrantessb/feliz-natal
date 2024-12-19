@@ -4,15 +4,13 @@ let piscando = false;
 
 let pausar = () => {
   listaBolas.forEach((bola) => {
-    // bola.style.backgroundColor = "gray";
-    bola.style.animation = "none"
-    bola.style.boxShadow = "none"
+    bola.classList.add("off")
   });
 };
 
 let rodar = () => {
   listaBolas.forEach((bola) => {
-    bola.style.animation = "";
+      bola.classList.remove("off")
   });
 }
 
@@ -22,7 +20,7 @@ function ligar() {
   if (piscando) {
     rodar();
   } else {
-    pausar()
+    pausar();
   }
 }
 
