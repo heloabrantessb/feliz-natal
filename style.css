@@ -6,6 +6,7 @@
 
 :root {
   font-size: 62.5%;
+  --cor: #fff;
 }
 
 body {
@@ -29,29 +30,34 @@ body {
 
 /* cores */
 .red {
+  --cor: rgba(255, 0, 0, 0.658);
   background-color: #ff0000d7;
   border-color: red;
-  animation: brilha-vermelho 1.2s infinite;
+  animation: brilha 0.4s infinite;
 }
 .yellow {
+  --cor: rgba(255, 255, 0, 0.523);
   background-color: #fdfd0d;
   border-color: yellow;
-  animation: brilha-amarelo 1.4s infinite;
+  animation: brilha 0.5s infinite;
 }
 .blue {
+  --cor: rgba(0, 0, 255, 0.696);
   background-color: rgba(0, 0, 255, 0.872);
   border-color: rgba(0, 0, 255, 0.872);
-  animation: brilha-azul 1.6s infinite;
+  animation: brilha 0.6s infinite;
 }
 .green {
+  --cor: rgba(0, 128, 0, 0.551);
   background-color: rgba(0, 128, 0, 0.888);
   border-color: rgba(0, 128, 0, 0.888);
-  animation: brilha-verde 1.8s infinite;
+  animation: brilha 0.7s infinite;
 }
 .pink {
+  --cor: rgba(243, 36, 202, 0.619);
   background-color: rgba(243, 36, 202, 0.909);
   border-color: rgba(243, 36, 202, 0.909);
-  animation: brilha-rosa 2s infinite;
+  animation: brilha 0.8s infinite;
 }
 /*botão*/
 button {
@@ -73,14 +79,14 @@ button:hover {
 }
 
 /* Animação */
-@keyframes brilha-vermelho{
+@keyframes brilha{
   from {
-    box-shadow: inset 18px 0px 29px 22px darkred;
+    box-shadow: inset 18px 0px 29px 22px var(--cor);
   } to{
-    box-shadow: 0px 0px 85px 20px red;
+    box-shadow: 0px 0px 85px 20px var(--cor);
   }
 }
-@keyframes brilha-amarelo{
+/* @keyframes brilha-amarelo{ 
   from {
     box-shadow: inset 18px 0px 29px 22px yellow;
   } to{
@@ -107,7 +113,7 @@ button:hover {
   } to{
     box-shadow: 0px 0px 85px 20px rgba(243, 36, 202, 0.909);
   }
-}
+} */
 
 @media (max-width: 375px) {
     body{

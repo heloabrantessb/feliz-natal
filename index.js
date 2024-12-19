@@ -1,28 +1,34 @@
 let listaBolas = document.querySelectorAll(".circle");
 
-console.log(listaBolas);
-let piscando;
+let piscando = false;
 
-function mudarEstado(bola) {
-    
-    console.log(bola)
-      if (bola.classList.contains("on")) {
-        bola.classList.remove("on");
-        bola.classList.add("off");
-      } else {
-        bola.classList.add("on");
-        bola.classList.remove("off");
-      }
-    }
-
-function piscar() {
+let pausar = () => {
   listaBolas.forEach((bola) => {
-    console.log(bola)
-    let intervalo = Math.floor(Math.random() * 500) + 1000
-    mudarEstado(bola, intervalo)
+    // bola.style.backgroundColor = "gray";
+    bola.style.animation = "none"
+    bola.style.boxShadow = "none"
+  });
+};
+
+let rodar = () => {
+  listaBolas.forEach((bola) => {
+    bola.style.animation = "";
   });
 }
 
-function desligar(){
-  clearInterval(piscando)
+function ligar() {
+  piscando = true;
+
+  if (piscando) {
+    rodar();
+  } else {
+    pausar()
+  }
 }
+
+function desligar(){
+  piscando = false;
+  pausar();
+}
+
+// let intervalo = Math.floor(Math.random() * 500) + 1000
