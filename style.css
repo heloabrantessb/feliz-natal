@@ -12,10 +12,11 @@
 body {
   font-size: 1.6rem;
   height: 100vh;
-  background-color:  #19151a;
+  background-color: #19151a;
+  font-family: "Cinzel", sans-serif;
 }
 
-main{
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,9 +58,9 @@ main{
   animation: brilha 0.6s infinite;
 }
 .green {
-  --cor:#2e7d54;
+  --cor: #2e7d54;
   background-color: var(--cor);
-  border-color:var(--cor);
+  border-color: var(--cor);
   animation: brilha 0.7s infinite;
 }
 .pink {
@@ -69,49 +70,58 @@ main{
   animation: brilha 0.8s infinite;
 }
 
-
-.circle.off{
+.circle.off {
   animation: none;
-  box-shadow: none;  
+  box-shadow: none;
 }
 
-h1{
+h1 {
   text-transform: uppercase;
   color: white;
+  text-shadow: 0px 0px 25px white, 2px 7px 25px white, 0px -7px 18px white;
+}
+
+.happy-glow {
 }
 
 /*botão*/
-.button{
+.button {
   display: flex;
   gap: 3rem;
 }
 
 button {
-  background-color: #49819d;
-  width: 8rem;
-  height: 2rem;
-  border-radius: 0.8rem;
+  background-color: #48555c;
+  width: 12rem;
+  height: 4rem;
+  border-radius: 4px;
+  border: 1px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: none;
   cursor: pointer;
+  color: white;
+  outline: none;
 }
 button:hover {
-  color: red;
+  color: white;
   background-color: transparent;
-  border: 2px solid red;
+  border: 2px solid white;
 }
-.credit{
+.credit {
+  color: white;
+}
 
+.credit p a {
+  text-decoration: none;
 }
 
 /* Animação */
-@keyframes brilha{
+@keyframes brilha {
   from {
     box-shadow: inset 18px 0px 29px 22px var(--cor);
-  } to{
+  }
+  to {
     box-shadow: 0px 0px 85px 20px var(--cor);
   }
 }
-
