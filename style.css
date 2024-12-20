@@ -21,6 +21,7 @@ main{
   align-items: center;
   height: 100%;
   width: 100%;
+  gap: 10rem;
 }
 
 .lights {
@@ -68,6 +69,12 @@ main{
   animation: brilha 0.8s infinite;
 }
 
+
+.circle.off{
+  animation: none;
+  box-shadow: none;  
+}
+
 h1{
   text-transform: uppercase;
   color: white;
@@ -89,17 +96,14 @@ button {
   align-items: center;
   border: none;
   cursor: pointer;
-  margin-top: 8rem;
 }
 button:hover {
   color: red;
   background-color: transparent;
   border: 2px solid red;
 }
+.credit{
 
-.circle.off{
-  animation: none;
-  box-shadow: none;  
 }
 
 /* Animação */
@@ -111,8 +115,3 @@ button:hover {
   }
 }
 
-@media (max-width: 375px) {
-    body{
-      background-color: yellow;
-    }
-}
