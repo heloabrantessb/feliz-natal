@@ -12,9 +12,17 @@
 body {
   font-size: 1.6rem;
   height: 100vh;
-  background-color: #131330;
-  justify-items: center;
+  background-color:  #19151a;
 }
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
 .lights {
   display: flex;
   margin-top: 6rem;
@@ -30,35 +38,41 @@ body {
 
 /* cores */
 .red {
-  --cor: rgba(255, 0, 0, 0.658);
-  background-color: #ff0000d7;
-  border-color: red;
+  --cor: #f82410;
+  background-color: var(--cor);
+  border-color: var(--cor);
   animation: brilha 0.4s infinite;
 }
 .yellow {
-  --cor: rgba(255, 255, 0, 0.523);
-  background-color: #fdfd0d;
-  border-color: yellow;
+  --cor: #ccd600;
+  background-color: var(--cor);
+  border-color: var(--cor);
   animation: brilha 0.5s infinite;
 }
 .blue {
-  --cor: rgba(0, 0, 255, 0.696);
-  background-color: rgba(0, 0, 255, 0.872);
-  border-color: rgba(0, 0, 255, 0.872);
+  --cor: #1e0bf7;
+  background-color: var(--cor);
+  border-color: var(--cor);
   animation: brilha 0.6s infinite;
 }
 .green {
-  --cor: rgba(0, 128, 0, 0.551);
-  background-color: rgba(0, 128, 0, 0.888);
-  border-color: rgba(0, 128, 0, 0.888);
+  --cor:#2e7d54;
+  background-color: var(--cor);
+  border-color:var(--cor);
   animation: brilha 0.7s infinite;
 }
 .pink {
-  --cor: rgba(243, 36, 202, 0.619);
-  background-color: rgba(243, 36, 202, 0.909);
-  border-color: rgba(243, 36, 202, 0.909);
+  --cor: #fb85fb;
+  background-color: var(--cor);
+  border-color: var(--cor);
   animation: brilha 0.8s infinite;
 }
+
+h1{
+  text-transform: uppercase;
+  color: white;
+}
+
 /*botão*/
 .button{
   display: flex;
@@ -66,7 +80,7 @@ body {
 }
 
 button {
-  background-color: green;
+  background-color: #49819d;
   width: 8rem;
   height: 2rem;
   border-radius: 0.8rem;
