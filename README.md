@@ -1,37 +1,49 @@
-//HTML
-
+<!-- HTML -->
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Feliz Natal!!</title>
-</head>
-<body>
-    <div class="lights"> 
-        <div class="circle red"></div>
-        <div class="circle yellow"></div>
-        <div class="circle blue"></div>
-        <div class="circle green"></div>
-        <div class="circle pink"></div>
-    </div>
-    <div class="button">
+  </head>
+  <body>
+    <main>
+      <div class="lights">
+        <div class="circle red off"></div>
+        <div class="circle yellow off"></div>
+        <div class="circle blue off"></div>
+        <div class="circle green off"></div>
+        <div class="circle pink off"></div>
+      </div>
+
+      <h1>Feliz Natal!</h1>
+
+      <div class="button">
         <button onclick="ligar()">Ligar</button>
         <button onclick="desligar()">Desligar</button>
-    </div>
+      </div>
+      <div class="credit">
+        <p>
+          Desenvolvido por
+          <a href="https://github.com/heloabrantessb" target="_blank"
+            >Heloisa Abrantes</a
+          >
+        </p>
+      </div>
+    </main>
 
-
-    <!-- ESTILIZAR OS CRÉDITOS -->
-    <!-- <div class="credit">
-        <p>Desenvolvido por <a href="https://github.com/heloabrantessb">Heloisa Abrantes</a></p>
-    </div> -->
+    <footer class="credit"></footer>
     <script src="./index.js"></script>
-</body>
+  </body>
 </html>
-
-
-//CSS
+<!-- CSS -->
 * {
   box-sizing: border-box;
   margin: 0;
@@ -46,9 +58,19 @@
 body {
   font-size: 1.6rem;
   height: 100vh;
-  background-color: #131330;
-  justify-items: center;
+  background-color: #19151a;
+  font-family: "Cinzel", sans-serif;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  gap: 10rem;
+}
+
 .lights {
   display: flex;
   margin-top: 6rem;
@@ -64,90 +86,110 @@ body {
 
 /* cores */
 .red {
-  --cor: rgba(255, 0, 0, 0.658);
-  background-color: #ff0000d7;
-  border-color: red;
+  --cor: #f82410;
+  background-color: var(--cor);
+  border-color: var(--cor);
   animation: brilha 0.4s infinite;
 }
 .yellow {
-  --cor: rgba(255, 255, 0, 0.523);
-  background-color: #fdfd0d;
-  border-color: yellow;
+  --cor: #ccd600;
+  background-color: var(--cor);
+  border-color: var(--cor);
   animation: brilha 0.5s infinite;
 }
 .blue {
-  --cor: rgba(0, 0, 255, 0.696);
-  background-color: rgba(0, 0, 255, 0.872);
-  border-color: rgba(0, 0, 255, 0.872);
+  --cor: #1e0bf7;
+  background-color: var(--cor);
+  border-color: var(--cor);
   animation: brilha 0.6s infinite;
 }
 .green {
-  --cor: rgba(0, 128, 0, 0.551);
-  background-color: rgba(0, 128, 0, 0.888);
-  border-color: rgba(0, 128, 0, 0.888);
+  --cor: #2e7d54;
+  background-color: var(--cor);
+  border-color: var(--cor);
   animation: brilha 0.7s infinite;
 }
 .pink {
-  --cor: rgba(243, 36, 202, 0.619);
-  background-color: rgba(243, 36, 202, 0.909);
-  border-color: rgba(243, 36, 202, 0.909);
+  --cor: #fb85fb;
+  background-color: var(--cor);
+  border-color: var(--cor);
   animation: brilha 0.8s infinite;
 }
+
+h1 {
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 0px 0px 25px white, 2px 7px 25px white, 0px -7px 18px white;
+}
+
+.happy-glow {
+}
+
 /*botão*/
+.button {
+  display: flex;
+  gap: 3rem;
+}
+
 button {
-  background-color: green;
-  width: 8rem;
-  height: 2rem;
-  border-radius: 0.8rem;
+  background-color: #48555c;
+  width: 12rem;
+  height: 4rem;
+  border-radius: 4px;
+  border: 1px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: none;
   cursor: pointer;
-  margin-top: 8rem;
+  color: white;
+  outline: none;
 }
 button:hover {
-  color: red;
+  color: white;
   background-color: transparent;
-  border: 2px solid red;
+  border: 2px solid white;
+}
+.credit {
+  color: white;
+}
+
+.credit p a {
+  text-decoration: none;
 }
 
 /* Animação */
-@keyframes brilha{
+@keyframes brilha {
   from {
     box-shadow: inset 18px 0px 29px 22px var(--cor);
-  } to{
+  }
+  to {
     box-shadow: 0px 0px 85px 20px var(--cor);
   }
 }
-
-//javascript
-
+<!-- JS -->
 let listaBolas = document.querySelectorAll(".circle");
 
 let piscando = false;
 
 let pausar = () => {
   listaBolas.forEach((bola) => {
-    bola.removeAttribute('animation')
-    bola.style.boxShadow = "none"
-    bola.style.animationPlayState = "paused";
+    bola.classList.add("off")
   });
 };
 
 let rodar = () => {
   listaBolas.forEach((bola) => {
-    bola.style.animationPlayState = "running";
+      bola.classList.remove("off")
   });
 }
 
 function ligar() {
-  piscando = !piscando;
+  piscando = true;
 
   if (piscando) {
     rodar();
   } else {
-    pausar()
+    pausar();
   }
 }
 

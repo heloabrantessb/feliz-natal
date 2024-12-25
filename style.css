@@ -32,10 +32,35 @@ main {
 }
 
 .circle {
-  width: 10rem;
-  height: 10rem;
-  border: 1px solid;
+  width: 8rem;
+  height: 8rem;
   border-radius: 50%;
+  position: relative;
+}
+
+.circle:before {
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  left: calc(50% - 7.5px);
+  top: -15px;
+  background: #48555c;
+  border-radius: 2px;
+}
+
+.circle:after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 130px;
+  height: 20px;
+  border-bottom: solid #48555c 2px;
+  border-radius: 50%;
+}
+ .circle:last-child:after {
+  display: none;
 }
 
 /* cores */
@@ -74,14 +99,17 @@ main {
   animation: none;
   box-shadow: none;
 }
-
-h1 {
-  text-transform: uppercase;
-  color: white;
-  text-shadow: 0px 0px 25px white, 2px 7px 25px white, 0px -7px 18px white;
+.happy.off{
+  animation: none;
+  text-shadow: none;
 }
 
-.happy-glow {
+.happy {
+  text-transform: uppercase;
+  font-size: 5rem;
+  color: white;
+  text-shadow: 0px 0px 25px white, 2px 7px 25px white, 0px -7px 18px white;
+  animation: brilha-texto 0.9s infinite;
 }
 
 /*botão*/
@@ -124,4 +152,14 @@ button:hover {
   to {
     box-shadow: 0px 0px 85px 20px var(--cor);
   }
+}
+
+@keyframes brilha-texto {
+  from {
+    text-shadow: 0px 0px 25px white, 2px 7px 20px white, 0px -7px 18px white;
+  }
+  to {
+    text-shadow: 0px 0px 85px white, 2px 7px 20px white, 0px -7px 18px white;
+  }
+  
 }
